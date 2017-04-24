@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
   include ArticlesHelper
+
+  before_filter :require_login, except: [:show, :index]
   def index
     # puts cupcake_path
     # puts cupcake_url
